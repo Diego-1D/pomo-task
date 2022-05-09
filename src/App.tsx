@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './styles/app.module.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <form className={styles.formulario}>
+        <h2>Organizador de tarefas</h2>
+        <input placeholder='Escreva o que irá fazer hoje?' />
+        <input placeholder='Quanto precisará?' />
+        <button>Criar tarefa</button>
+      </form>
+      <div className={styles.cards}>
+        <h2>Tarefas do dia:</h2>
+        <div>
+          <label>Geometria</label>
+          <span>00:00:00</span>
+        </div>
+      </div>
     </div>
   );
 }

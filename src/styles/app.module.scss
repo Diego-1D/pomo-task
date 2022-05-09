@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #100F5B;
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            color: #FFF
+        }
+
+        input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 10px;
+            background: #5454C2;
+            color: #FFF;
+        }
+
+        button {
+            padding: 15px 50px;
+            border-radius: 10px;
+            background-color: #545068;
+        }
+    }
+    .cards{
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        border-radius: 10px;
+
+        h2 {
+            color: #FFF;
+            padding-bottom: 10px;
+        }
+
+        div{
+            width: 100%;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background-color: cyan;
+
+
+            label{
+                font-size: 22px;
+            }
+            span{
+                font-size: 20px;
+            }
+        }
+    }
+}
