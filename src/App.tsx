@@ -18,15 +18,36 @@ function App() {
     })))
   }
 
+  function finishTask() {
+    if (selected) {
+      setSelected(undefined)
+      setTasks(previousTask => previousTask.map(tasks => {
+        if (tasks.id === selected.id) {
+          return {
+            ...tasks,
+            selected: false,
+            completed: true
+          }
+        }
+        return tasks
+      }))
+    }
+  }
+
   return (
     <div className={styles.app}>
-      <Form setTasks={setTasks}/>
-      <ToDoList
-        tasks={tasks}
-        selectTask={selectTask}
-      />
-      <Countdown />
-    </div>
+      { /*  <Form setTasks={setTasks} />*/}
+      <div className={styles.wrapper}>
+        <Countdown
+          selected={selected}
+          finishTask={finishTask}
+        />
+        <ToDoList
+          tasks={tasks}
+          selectTask={selectTask}
+        />
+      </div>
+    </div >
   );
 }
 
