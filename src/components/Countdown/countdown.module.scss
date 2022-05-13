@@ -1,0 +1,23 @@
+.areaCountdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+    .countdown {
+        width: 250px;
+        height: 250px;
+        border: 7px solid #EABE31;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+
+        span {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+        }
+    }
+}
