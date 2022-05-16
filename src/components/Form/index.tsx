@@ -5,10 +5,11 @@ import { v4 as uuidv4 } from 'uuid'
 import Button from '../Button'
 
 interface Props {
-    setTasks: React.Dispatch<React.SetStateAction<NewTask[]>>
+    setTasks: React.Dispatch<React.SetStateAction<NewTask[]>>,
+    onClose: () => void
 }
 
-const Form = ({ setTasks}: Props) => {
+const Form = ({ onClose, setTasks }: Props) => {
 
     const [task, setTask] = useState('')
     const [time, setTime] = useState('00:00')
@@ -22,41 +23,54 @@ const Form = ({ setTasks}: Props) => {
                     task,
                     time,
                     selected: false,
-                   completed: false,
+                    completed: false,
                     id: uuidv4()
                 }
             ])
         setTask('')
         setTime('00:00')
+        onClose()
     }
 
+    const handleOutsideClick = () => {
+        onClose()
+    };
+
     return (
-        <form className={styles.form} onSubmit={addTask}>
-            <h2>Organizador de tarefas</h2>
-            <input
-                placeholder='Escreva o que irá fazer hoje?'
-                type='text'
-                name='task'
-                value={task}
-                onChange={event => setTask(event.target.value)}
-                required
-            />
-            <input
-                placeholder='Quanto tempo precisará?'
-                type='time'
-                step='1'
-                name='time'
-                value={time}
-                onChange={event => setTime(event.target.value)}
-                required
-                id='time'
-                min='00:00:00'
-                max='03:00:00'
-            />
-            <Button type='submit'>
-                Criar Tarefa
-            </Button>
-        </form>
+        <div className={styles.container}>
+            <form className={styles.form} onSubmit={addTask}>
+                <div className={styles.btnClose}>
+                    <button type='button' onClick={handleOutsideClick}>
+                        X fechar
+                    </button>
+                </div>
+                <h2>Tarefa do dia</h2>
+                <input
+                    placeholder='Escreva o que irá fazer hoje?'
+                    type='text'
+                    name='task'
+                    value={task}
+                    onChange={event => setTask(event.target.value)}
+                    required
+                />
+                <h2>Tempo</h2>
+                <input
+                    placeholder='Quanto tempo precisará?'
+                    type='time'
+                    step='1'
+                    name='time'
+                    value={time}
+                    onChange={event => setTime(event.target.value)}
+                    id='time'
+                    min='00:00:00'
+                    max='03:00:00'
+                    required
+                />
+                <Button type='submit'>
+                    Criar Tarefa
+                </Button>
+            </form>
+        </div>
     )
 }
 

@@ -1,9 +1,15 @@
 .button {
-    padding: 15px 50px;
+    padding: 15px 45px;
     border-radius: 10px;
     background-color: #E67420;
     font-size: 18px;
     font-weight: bold;
     color: #F9F2F3;
     border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        background-color: green;
+    }
 }
