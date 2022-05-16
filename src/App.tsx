@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      { /*  <Form setTasks={setTasks} />*/}
+      <h1 className={styles.title}>Organizador de estudos</h1>
       <div className={styles.wrapper}>
         <Countdown
           selected={selected}
@@ -45,6 +45,7 @@ function App() {
         <ToDoList
           tasks={tasks}
           selectTask={selectTask}
+          setTasks={setTasks}
         />
       </div>
     </div >
