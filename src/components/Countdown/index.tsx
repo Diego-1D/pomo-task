@@ -12,7 +12,7 @@ interface Props {
 const Countdown = ({ selected, finishTask }: Props) => {
 
     const [time, setTime] = useState<number>(0)
-    const [pause, setPause] = useState(false)
+    const [nameButton, setNameButton] = useState('Iniciar')
 
     useEffect(() => {
         if (selected?.time) {
@@ -24,6 +24,7 @@ const Countdown = ({ selected, finishTask }: Props) => {
         setTimeout(() => {
             if (cont > 0) {
                 setTime(cont - 1)
+                setNameButton('Pausar')
                 return regressive(cont - 1)
             }
             finishTask()
@@ -46,7 +47,7 @@ const Countdown = ({ selected, finishTask }: Props) => {
             </div>
             <Button
                 onClick={() => regressive(time)}>
-                Iniciar
+                {nameButton}
             </Button>
         </div>
     )

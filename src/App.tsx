@@ -1,7 +1,7 @@
 import Countdown from './components/Countdown';
-import Form from './components/Form';
 import ToDoList from './components/ToDoList';
-import styles from './styles/app.module.scss'
+import './styles/global.scss';
+import styles from './styles/app.module.scss';
 import { NewTask } from './type/tasks';
 import { useState } from 'react';
 
@@ -36,7 +36,9 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <h1 className={styles.title}>Organizador de estudos</h1>
+      <div className={styles.title}>
+        <h1 >Organizador de estudos</h1>
+      </div>
       <div className={styles.wrapper}>
         <Countdown
           selected={selected}

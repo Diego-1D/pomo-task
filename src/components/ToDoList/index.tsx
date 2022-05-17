@@ -12,9 +12,6 @@ interface Props {
 }
 
 const ToDoList = ({ tasks, selectTask, setTasks }: Props) => {
-
-    console.log('Tarefas', tasks)
-
     const [openModal, setOpenModal] = useState(false)
 
     const toggle = () => {

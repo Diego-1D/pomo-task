@@ -54,7 +54,7 @@ const Form = ({ onClose, setTasks }: Props) => {
             <form className={styles.form} onSubmit={addTask}>
                 <div className={styles.btnClose}>
                     <button type='button' onClick={handleOutsideClick}>
-                        X fechar
+                        Fechar
                     </button>
                 </div>
                 <h2>Tarefa do dia</h2>
@@ -75,7 +75,7 @@ const Form = ({ onClose, setTasks }: Props) => {
                     onChange={event => setTime(event.target.value)}
                     id='time'
                     min='00:00:00'
-                    max='03:00:00'
+                    max='01:30:00'
                     required
                 />
                 <Button type='submit'>
