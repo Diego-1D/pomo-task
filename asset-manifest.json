@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/pomo-task/static/css/main.365ea774.css",
+    "main.js": "/pomo-task/static/js/main.e6369468.js",
+    "index.html": "/pomo-task/index.html",
+    "main.365ea774.css.map": "/pomo-task/static/css/main.365ea774.css.map",
+    "main.e6369468.js.map": "/pomo-task/static/js/main.e6369468.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.365ea774.css",
+    "static/js/main.e6369468.js"
+  ]
+}
