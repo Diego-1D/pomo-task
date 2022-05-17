@@ -7,11 +7,12 @@
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
-    background-color: #EABE31;
+    background-color: var(--yellow-50);
     cursor: pointer;
 
     label {
         font-size: 22px;
+        cursor: pointer;
     }
 
     span {
@@ -20,7 +21,7 @@
 }
 
 .activeCard{
-    background-color: green;
     color: #FFF;
-    box-shadow: 2px 4px 4px #000 inset;
+    background-color: var(--green-50);
+    box-shadow: 2px 2px 2px #000 inset;
 }

@@ -1,15 +1,15 @@
 .button {
     padding: 15px 45px;
     border-radius: 10px;
-    background-color: #E67420;
+    background-color: var(--orange-50);
     font-size: 18px;
     font-weight: bold;
-    color: #F9F2F3;
+    color: var(--white-50);
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 
     &:hover{
-        background-color: green;
+        background-color: var(--green-50)
     }
 }

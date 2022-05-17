@@ -26,8 +26,8 @@
 
             button {
                 padding: 8px;
-                color: #F9F2F3;
-                background-color: #E67420;
+                color: var(--white-50);
+                background-color: var(--orange-50);
                 border: none;
                 cursor: pointer;
                 font-size: 14px;
@@ -36,14 +36,14 @@
                 transition: all 0.2s ease-in-out;
 
                 &:hover {
-                    background-color: green;
+                    background-color: var(--green-50);
                 }
             }
         }
 
         h2 {
             width: 100%;
-            color: #F9F2F3;
+            color: var(--white-50);
             text-align: left;
         }
 
@@ -54,7 +54,7 @@
             margin: 5px 0 25px 0;
             border: none;
             border-radius: 10px;
-            background-color: #F0A9A0;
+            background-color: var(--pink-50);
             font-size: 16px;
 
             @media screen and (max-width: 769px) {
@@ -63,7 +63,7 @@
         }
 
         input::placeholder {
-            color: black;
+            color: #000;
         }
 
     }
