@@ -12,24 +12,37 @@ interface Props {
 const Form = ({ onClose, setTasks }: Props) => {
 
     const [task, setTask] = useState('')
-    const [time, setTime] = useState('00:00')
+    const [time, setTime] = useState('00:00:00')
 
-    function addTask(event: React.FormEvent<HTMLFormElement>) {
+    function addTask (event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        setTasks(previousTask =>
-            [
-                ...previousTask,
-                {
-                    task,
-                    time,
-                    selected: false,
-                    completed: false,
-                    id: uuidv4()
-                }
-            ])
-        setTask('')
-        setTime('00:00')
-        onClose()
+
+        let errors: string[] = []
+
+        if (task === '') {
+            errors.push('Descreva a tarefa do dia!')
+        }
+        if (time === '00:00:00') {
+            errors.push('Inserir o tempo necessário para o estudo!')
+        }
+        if(errors.length > 0){
+            alert(errors.join('\n'))
+        } else {
+            setTasks(previousTask =>
+                [
+                    ...previousTask,
+                    {
+                        task,
+                        time,
+                        selected: false,
+                        completed: false,
+                        id: uuidv4()
+                    }
+                ])
+            setTask('')
+            setTime('00:00:00')
+            onClose()
+        }
     }
 
     const handleOutsideClick = () => {
@@ -51,7 +64,6 @@ const Form = ({ onClose, setTasks }: Props) => {
                     name='task'
                     value={task}
                     onChange={event => setTask(event.target.value)}
-                    required
                 />
                 <h2>Tempo</h2>
                 <input
